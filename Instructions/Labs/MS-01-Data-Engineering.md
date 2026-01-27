@@ -23,7 +23,7 @@ In this task, you will initiate your 60-day free trial of Microsoft Fabric by si
 
 1. On the **Power BI homepage**, click on the **Profile icon (1)** on the top right, and then click on **Free trial (2)**.
 
-    ![Account-manager-start](./Images/Ex1T1S1.png)
+    ![Account-manager-start](./Images/Ex1T1S1a.png)
 
 1. On the **Activate your 60-day free Fabric trial capacity** dialog box, click **Activate**.  
 
