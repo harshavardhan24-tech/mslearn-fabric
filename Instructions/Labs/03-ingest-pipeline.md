@@ -32,11 +32,9 @@ In this task, you will create a pipeline in Microsoft Fabric to ingest data into
    
 4. If the **Copy data** assistant doesn't open automatically, select **Copy data assistant** in the pipeline editor page.
 
-    ![](./Images2/3/t1-3.png)
+    ![](./Images2/3/E3T1S4.png)
 
-5. When the **Use Copy job?** pop-up appears, select **No, use copy assistant** to continue with the Copy Data Assistant.
-
-     ![](./Images2/lab4-11-3.png)
+     >**Note:** If the **Use Copy job?** pop-up appears, select **No, use copy assistant** to continue with the Copy Data Assistant.
 
 6. In the **Copy Data** wizard, search for **Http (1)** in the search bar and select the **Http (2)** connector from the results.
 
@@ -57,14 +55,14 @@ In this task, you will create a pipeline in Microsoft Fabric to ingest data into
   
     ![](./Images2/3/t1-6.png)
    
-9. After the data is sampled, ensure the following settings are selected:
+9. After the data is sampled, ensure the following settings are selected and leave all other fileds as default:
     
     - File format: **DelimitedText (1)**
     - Column delimiter: **Comma (,) (2)**
     - Row delimiter: **Line feed (\n) (3)**
     - Click **Preview data (4)** to see a sample of the data.
 
-      ![](./Images2/3/t1-7.png)
+      ![](./Images2/3/E3T1S8.png)
 
 10. After reviewing the sample data, click **Next** to proceed to the next step.
 
@@ -73,34 +71,57 @@ In this task, you will create a pipeline in Microsoft Fabric to ingest data into
 11. On the **Choose data destination** page, click on **OneLake catalog (1)** from the top menu bar, then select the lakehouse named **fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/> (2)**.
 
     ![](./Images2/3/t1-9.png)
+     
+1. On **Choose a copy mode**, select **Full copy(1)** and click on **Next(2)** 
+
+    ![](./Images2/3/E3T1S11.png)
 
 12. On the **Connect to data destination** page, configure the following settings, then click on **Next (4)**:
 
-    - Root folder: **Files (1)**
+    - Select: **Files (1)**
     - Folder path: **new_data (2)**
     - File name: **sales.csv  (3)**
    
-      ![](./Images2/3/t1-10.png)
+      ![](./Images2/3/E3T1S12.png)
 
-13. On the **Connect to data destination** page, configure the following file format settings, and then click on **Next (4)**:
+13. Scroll down and expand **File format settings** and select following settings and then click on **Next(3)**
 
-    - File format: **DelimitedText (1)**
-    - Column delimiter: **Comma (,) (2)**
-    - Row delimiter: **Line feed (\n) (3)**
-   
-      ![](./Images2/3/t1-11.png)
+    - Column delimiter: **Comma (,) (1)**
+    - Row delimiter: **Line feed (\n) (2)**
 
-14. On the **Review + save** page, review the copy summary to verify all source and destination settings, and then click on **Save + Run** to initiate the data copy process.
+     ![](./Images2/3/E3T1S14.png)
 
-    ![](./Images2/3/t1-12.png)
+14. On the **Review + save** page, review the copy summary to verify all source and destination settings, and then click on **Save** to initiate the data copy process.
 
-15. After executing the copy operation, a new pipeline containing the **Copy data** activity is automatically created, as shown in the diagram.
+    ![](./Images2/3/E3T1S13.png)
 
-    ![](./Images2/3/t1-13.png)
+15. After executing the copy operation, a new pipeline containing the **Copy job** activity is automatically created, as shown in the diagram.
+
+    ![](./Images2/3/E3T1S15.png)
+
+1. Click on the **Copy job**, go to **Setting** and in the **connection** drop down, select **Browse all**
+
+    ![](./Images2/3/E3T1S16.png)
+
+1. Select **Copy job**
+
+    ![](./Images2/3/E3T1S17.png)
+
+1. Select **Create new connection(1)** and in the **Authentication kind**, select **Organizational account(2)** then click on **Sign in(3)**
+
+    ![](./Images2/3/E3T1S20.png)
+
+1. In the pop-up select the provided **Email: <inject key="AzureAdUserEmail"></inject>** then click on **Connect**
+
+    ![](./Images2/3/E3T1S18.png)
+
+1. On the **Home (1)** tab, save the pipeline using the **Save (2)** icon, then execute it by clicking **Run (3)** and wait for all activities to complete.
+
+    ![](./Images2/3/E3T1S19.png)
 
 16. Once the pipeline is running, monitor its execution status by selecting the **Output (1)** tab below the pipeline designer. Click the refresh **↻ (2)** icon to update the status, and wait for the pipeline to show as Succeeded.
 
-    ![](./Images2/3/t1-14a.png)
+    ![](./Images2/3/E3T1S21.png)
 
 17. From the left pane, click on **My workspace (1)**, then select **fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/> (2)** to open.
 
@@ -190,11 +211,11 @@ In this task, you will modify your existing pipeline to include the notebook you
 
      ![](./Images2/lab4-11-10.png)
 
-2. From the **Activities (1)** tab, click the **ellipsis (...) (1)** in the toolbar, select **Delete data (3)** from the list, then position the **Delete data** activity to the left of the **Copy data** activity and connect the **On completion** (blue arrow) output from **Delete data** to **Copy data**, as shown below:
+2. From the **Activities (1)** tab, click the **ellipsis (...) (1)** in the toolbar, select **Delete data (3)** from the list, then position the **Delete data** activity to the left of the **Copy job** activity and connect the **On completion** (blue arrow) output from **Delete data** to **Copy job**, as shown below:
 
-    ![](./Images2/3/t3-2.png)
+    ![](./Images2/3/E3T3S2.png)
 
-    ![](./Images2/3/t3-2p.png)
+    ![](./Images2/3/E3T3S2-1.png)
 
 3. Select the **Delete data (1)** activity. In the pane below the design canvas, set the following properties:
 
@@ -230,9 +251,9 @@ In this task, you will modify your existing pipeline to include the notebook you
 
     ![](./Images2/3/t3-4.png)
 
-5. Select the **Copy data** activity, then link its **On completion** (blue arrow) output to the **Notebook** activity as illustrated below:
+5. Select the **Copy job** activity, then link its **On completion** (blue arrow) output to the **Notebook** activity as illustrated below:
 
-    ![](./Images2/3/t3-5.png)
+    ![](./Images2/3/E3T3S5.png)
 
 6. Select the **Notebook (1)** activity. In the pane below the design canvas, set the following properties:
 
@@ -258,7 +279,7 @@ In this task, you will modify your existing pipeline to include the notebook you
 
     ![](./Images2/3/t3-7.png)
 
-    ![](./Images2/lab4-11-14n.png)
+    ![](./Images2/3/E3T3S7.png)
 
 8. From the left pane, click on **My workspace (1)**, then select **fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/> (2)** to open.
 

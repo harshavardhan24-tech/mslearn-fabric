@@ -93,6 +93,8 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
     ![](./Images2/2/t2-7p.png)
 
+     >**Note:** If the Properties option appears greyed out, it indicates that the publishing process is still in progress. Please wait a few moments and refresh the page once publishing is complete.
+
 1. Rename the dataflow as **Transform Orders Dataflow (1)** and click on **Save (2)**.
 
     ![](./Images2/2/t2-8.png)
@@ -117,11 +119,13 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 
 1. Select **Pipeline activity (1)** and add a **Dataflow (2)** activity to the pipeline.
 
-    ![](./Images2/2/t2-3a.png)
+    ![](./Images2/2/E2T3S4.png)
 
 1. Select the Dataflow1 activity, go to **Settings (1)** from the bottom pane, choose **fabric-<inject key="DeploymentID" enableCopy="false"/>**  **(2)** as the **Workspace**, and select **Transform Orders Dataflow (3)** as the **Dataflow**.
 
     ![](./Images2/2/t3-4.png)
+
+     >**Note :** Drag the Settings tab upward to view all available options.
    
 1. **Save (1)** the pipeline using the **disk icon** from the top-left, then click **Run (2)** to execute it.
 
