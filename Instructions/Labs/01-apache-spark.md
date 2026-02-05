@@ -78,9 +78,9 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
 
     > **Note:** After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
 
-1. From the **Explorer** panel on the left, under the **Data items** tab, open the **Add data items (1)** dropdown and select **Existing data sources (2)**.
+1. From the **Explorer** panel on the left, under the **Data items** tab, open the **Add data items (1)** dropdown and select **From OneLake catalog (2)**.
 
-    ![](./Images2/1/t2-2.png)
+    ![](./Images2/1/E1T2S4.png)
 
 1. Select the checkbox next to **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>** **(1)**, then click **Connect (2)** in the bottom-right corner.
 
