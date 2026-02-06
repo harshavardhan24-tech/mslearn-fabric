@@ -51,9 +51,9 @@ In this task, you will create a pipeline in Microsoft Fabric to ingest data into
 
       ![](./Images2/3/t1-5p.png)
     
-8. Leave all fields on the **Connect to data source** page as default and click **Next**.
+8. Leave all fields on the **Choose data** page as default and click **Next**.
   
-    ![](./Images2/3/t1-6.png)
+    ![](./Images2/3/E3T1S6.png)
    
 9. After the data is sampled, ensure the following settings are selected and leave all other fileds as default:
     
@@ -72,11 +72,11 @@ In this task, you will create a pipeline in Microsoft Fabric to ingest data into
 
     ![](./Images2/3/t1-9.png)
      
-1. On **Choose a copy mode**, select **Full copy(1)** and click on **Next(2)** 
+1. On **Choose copy job mode**, select **Full copy(1)** and click on **Next(2)** 
 
     ![](./Images2/3/E3T1S11.png)
 
-12. On the **Connect to data destination** page, configure the following settings, then click on **Next (4)**:
+12. On the **Map to destination** page, configure the following settings,
 
     - Select: **Files (1)**
     - Folder path: **new_data (2)**
@@ -107,7 +107,7 @@ In this task, you will create a pipeline in Microsoft Fabric to ingest data into
 
     ![](./Images2/3/E3T1S17.png)
 
-1. Select **Create new connection(1)** and in the **Authentication kind**, select **Organizational account(2)** then click on **Sign in(3)**
+1. On the **Connect data source** page, select **Create new connection(1)** and in the **Authentication kind**, select **Organizational account(2)** then click on **Sign in(3)**
 
     ![](./Images2/3/E3T1S20.png)
 
@@ -280,6 +280,8 @@ In this task, you will modify your existing pipeline to include the notebook you
     ![](./Images2/3/t3-7.png)
 
     ![](./Images2/3/E3T3S7.png)
+
+     >**Note :** It may take a few minutes for all activities to complete successfully
 
 8. From the left pane, click on **My workspace (1)**, then select **fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/> (2)** to open.
 
